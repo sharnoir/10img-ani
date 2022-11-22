@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="top" style="height:100vh; background : #ccc"></div>
+
+    <main>
+        <div class="cursor"></div>
+        <div class="wrapper">
+            <div class="project-list">
+                <div class="project p-1">
+                    <div class="project-overlay">
+                        <div class="project-title">
+                            <h2><a href="#">MotionLand1</a></h2>
+                        </div><!-- project-title -->
+                        <div class="project-catag">Branding1</div>
+                    </div><!-- project-overlay -->
+                </div><!-- p-1 -->
+
+                <div class="project p-2">
+                    <div class="project-overlay">
+                        <div class="project-title">
+                            <h2><a href="#">MotionLand2</a></h2>
+                        </div><!-- project-title -->
+                        <div class="project-catag">Branding2</div>
+                    </div><!-- project-overlay  -->
+                </div><!-- p-2 -->
+
+                <div class="project p-3">
+                    <div class="project-overlay">
+                        <div class="project-title">
+                            <h2><a href="#">MotionLand3</a></h2>
+                        </div><!-- project-title -->
+                        <div class="project-catag">Branding3</div>
+                    </div><!-- project-overlay  -->
+                </div><!-- p-3 -->
+
+                <div class="project p-4">
+                    <div class="project-overlay">
+                        <div class="project-title">
+                            <h2><a href="#">MotionLand3</a></h2>
+                        </div><!-- project-title -->
+                        <div class="project-catag">Branding3</div>
+                    </div><!-- project-overlay  -->
+                </div><!-- p-4 -->
+
+            </div><!-- project-list -->
+        </div><!-- wrapper -->
+    </main>
+
+    <div class="bottom" style="height:100vh; background : #ccc"></div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        $('.p-1').hover(function () {
+            $('.cursor').css({
+                'background-image': 'url(img/image-1.jpg)'
+            })
+
+        })
+        $('.p-2').hover(function () {
+            $('.cursor').css({
+                'background-image': 'url(img/image-2.jpg)'
+            })
+
+        })
+        $('.p-3').hover(function () {
+            $('.cursor').css({
+                'background-image': 'url(img/image-3.jpg)'
+            })
+
+        })
+        $('.p-4').hover(function () {
+            $('.cursor').css({
+                'background-image': 'url(img/image-4.jpg)'
+            })
+
+        })
+
+        var _cursor = $('.cursor'),
+            _overlay = $('.project-overlay');
+        _overlay.mousemove(function (e) {
+            _cursor.css({
+                transform: 'scale(' + 1 + ')',
+                opacity: 1,
+                left: e.clientX - 250,
+                top: e.clientY - 300,
+
+
+            })
+        });
+
+        _overlay.mouseleave(function () {
+            _cursor.css({
+                transform: 'scale(' + 0.2 + ')',
+                opacity:0
+            })
+        });
+    </script>
+
+</body>
+
+</html>
